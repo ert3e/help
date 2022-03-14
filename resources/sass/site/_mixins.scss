@@ -1,0 +1,37 @@
+@mixin hover-effect($opacity: .7) {
+  transition: .2s;
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin animationShow($timer: .3) {
+  visibility: visible;
+  display: flex;
+  opacity: 0;
+  animation: #{$timer}s 0s show linear both;
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+
+@mixin animationClose($timer: .3) {
+  visibility: visible;
+  animation: #{$timer}s 0s close linear both;
+  @keyframes close {
+    from {
+      visibility: visible;
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

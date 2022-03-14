@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Models\DummyExtendsClassBase;
+
+class News extends DummyExtendsClassBase
+{
+    //
+}

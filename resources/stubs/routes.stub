@@ -1,0 +1,10 @@
+<?php
+
+Route::group(['prefix' => 'DummyRoutePrefix', 'middleware' => 'App\Http\Middleware\Privilege:DummyRoutePrefix'], function () {
+    Route::get('/', 'DummyClass@index')->name('DummyModuleType.DummyRoutePrefix');
+    Route::get('/add', 'DummyClass@add')->name('DummyModuleType.DummyRoutePrefix.add');
+    Route::post('/add/store', 'DummyClass@store')->name('DummyModuleType.DummyRoutePrefix.store');
+    Route::get('/{DummyModelVariable}', 'DummyClass@edit')->name('DummyModuleType.DummyRoutePrefix.edit');
+    Route::post('/{DummyModelVariable}/update', 'DummyClass@update')->name('DummyModuleType.DummyRoutePrefix.update');
+    Route::get('/{DummyModelVariable}/delete', 'DummyClass@delete')->name('DummyModuleType.DummyRoutePrefix.delete');
+});

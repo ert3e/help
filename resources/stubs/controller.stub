@@ -1,0 +1,48 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullModelClass;
+use Illuminate\Http\Request;
+use DummyRootNamespaceHttp\Controllers\DummyType\DummyTypeController;
+
+class DummyClass extends DummyTypeController
+{
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->bc->addCrumb('Название модуля');
+    }
+
+    public function index()
+    {
+        //
+    }
+
+    public function add()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function edit($modelId)
+    {
+        //
+    }
+
+    public function update(Request $request, $modelId)
+    {
+        //
+    }
+
+    public function delete($modelId)
+    {
+        //
+    }
+
+}
