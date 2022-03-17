@@ -116,6 +116,10 @@ return [
                     'reports'   => 'Отчеты',
                 ]
             ],
+        ],
+        'Profile' => [
+            'Main'          => [],
+            'Auth'          => []
         ]
     ]
 ];

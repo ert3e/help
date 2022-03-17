@@ -33,7 +33,6 @@ Route::group(['middleware' => 'App\Http\Middleware\Admin', 'prefix' => 'admin'],
 
 // подключаем все роуты модулей сайта
 Route::group(['middleware' => ['web']], function () {
-
     $siteModules = config('modules.types.Site');
     if ($siteModules) {
         foreach ($siteModules as $moduleName => $moduleSettings) {
@@ -46,6 +45,20 @@ Route::group(['middleware' => ['web']], function () {
     }
 });
 
-Auth::routes();
+// подключаем все роуты модулей сайта
+Route::group(['middleware' => ['web']], function () {
+
+    $siteModules = config('modules.types.Profile');
+    if ($siteModules) {
+        foreach ($siteModules as $moduleName => $moduleSettings) {
+            $routesFile = base_path('app/Modules/Profile/' . $moduleName . '/Routes/web.php');
+
+            if (file_exists($routesFile)) {
+                Route::namespace("\\App\\Modules\\Profile\\$moduleName\\Controllers")->middleware('App\Http\Middleware\IsVerified')->group($routesFile);
+            }
+        }
+    }
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');

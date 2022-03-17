@@ -34,8 +34,12 @@ class SiteController extends Controller
         $this->bc->setDivider(null);
         $this->bc->setCssClasses('');
         $this->bc->setListItemCssClass('breadcrumbs__item');
+        if (php_sapi_name() === 'cli' OR defined('STDIN')) {
+            $this->emailSender = 'info@' . setting('contacts.email_alerts');
+        } else {
+            $this->emailSender = 'info@' . $_SERVER['SERVER_NAME'];
+        }
 
-        $this->emailSender = 'info@' . $_SERVER['SERVER_NAME'];
         $this->emailAlerts = setting('contacts.email_alerts');
 
         $this->siteName = setting('main.title');

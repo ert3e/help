@@ -15409,6 +15409,17 @@ window.onload = function () {
 
 window.app = app;
 
+(function ($, document) {
+  // get tallest tab__content element
+  var height = -1;
+  $('.tab__content').each(function () {
+    height = height > $(this).outerHeight() ? height : $(this).outerHeight();
+    $(this).css('position', 'absolute');
+  }); // set height of tabs + top offset
+
+  $('[data-tabs]').css('min-height', height + 40 + 'px');
+})(jQuery, document);
+
 /***/ }),
 
 /***/ "./resources/js/site/vue.js":
@@ -15441,7 +15452,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/murad/Sites/localhost/fond/resources/js/site/app.js */"./resources/js/site/app.js");
+module.exports = __webpack_require__(/*! E:\OSPanel\domains\help\resources\js\site\app.js */"./resources/js/site/app.js");
 
 
 /***/ })

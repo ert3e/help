@@ -28004,9 +28004,9 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/murad/Sites/localhost/fond/resources/js/admin/app.js */"./resources/js/admin/app.js");
-__webpack_require__(/*! /Users/murad/Sites/localhost/fond/resources/sass/admin/style.scss */"./resources/sass/admin/style.scss");
-module.exports = __webpack_require__(/*! /Users/murad/Sites/localhost/fond/resources/sass/site/style.scss */"./resources/sass/site/style.scss");
+__webpack_require__(/*! E:\OSPanel\domains\help\resources\js\admin\app.js */"./resources/js/admin/app.js");
+__webpack_require__(/*! E:\OSPanel\domains\help\resources\sass\admin\style.scss */"./resources/sass/admin/style.scss");
+module.exports = __webpack_require__(/*! E:\OSPanel\domains\help\resources\sass\site\style.scss */"./resources/sass/site/style.scss");
 
 
 /***/ })

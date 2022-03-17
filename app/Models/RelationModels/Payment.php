@@ -10,8 +10,19 @@ class Payment extends BaseModel
 
     public $table = 'payments';
 
-    public $fillable = ['item_id', 'item_type', 'donation_type', 'telephone', 'payment_id', 'payment_status',
-        'save_payment_method', 'interval_days', 'next_pay', 'comment', 'paid', 'amount'];
+    public $fillable = [
+        'item_id',
+        'item_type',
+        'donation_type',
+        'telephone',
+        'payment_id',
+        'payment_status',
+        'save_payment_method',
+        'interval_days',
+        'next_pay',
+        'comment',
+        'paid',
+        'amount'];
 
     /**
      * Тип платежа - нуждающемуся
