@@ -1116,6 +1116,48 @@ a {
 .header__to-help:hover {
     background: #08724D;
 }
+.header__to-logout {
+    border: none;
+    cursor: pointer;
+    border-radius: .625rem;
+    padding: 0 1rem;
+    height: 2.125rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    margin-left: 1.85rem;
+    background: #F4D4AA;
+}
+.header__to-login {
+    border: none;
+    cursor: pointer;
+    border-radius: .625rem;
+    padding: 0 1rem;
+    height: 2.125rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #0A8E60;
+    color: #fff;
+    margin-left: 1.85rem;
+}
 
 .header-panel {
     display: none;
@@ -4013,15 +4055,7 @@ a {
 .want-help .help-form__btn:hover {
     background: #EFBF80;
 }
-.login__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-.login-form-footer_input {
+.login-form-phone {
     border:none;
     border-bottom: 1px solid #C4C4C4;
     padding: 5px 10px;
@@ -4031,14 +4065,40 @@ a {
     width: 24rem;
 }
 .login-form__title {
-    font-family: 'Roboto';
-    font-size: 30px;
+    font-family: "Roboto";
+    font-size: 1.75rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 35px;
+    line-height: 2.15rem;
     letter-spacing: 0em;
     text-align: left;
-
+}
+.login {
+    .login-form-phone {
+        width: 23.75rem;
+        height: 3.125rem;
+    }
+    .login-form-phone::placeholder {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #7C7C7C;
+    }
+    .login-form {
+        &__row {
+            margin-top: 1.5rem;
+        }
+    }
+    &__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
 }
 .login-form-footer__btn {
     border: none;

@@ -3,12 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+
 
 class UserBase extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
     // ID позиции обычного пользователя по умолчанию
     const USER = 1;
 

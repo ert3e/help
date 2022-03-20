@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // подключаем все роуты модулей админки
 Route::group(['middleware' => 'App\Http\Middleware\Admin', 'prefix' => 'admin'], function () {
-
     $adminModules = config('modules.types.Admin');
-
     if ($adminModules) {
         foreach ($adminModules as $moduleName => $moduleSettings) {
             $routesFile = base_path('app/Modules/Admin/' . $moduleName . '/Routes/web.php');
@@ -31,8 +29,12 @@ Route::group(['middleware' => 'App\Http\Middleware\Admin', 'prefix' => 'admin'],
 });
 
 
-// подключаем все роуты модулей сайта
-Route::group(['middleware' => ['web']], function () {
+Route::get('login', 'LoginController@showLoginForm')->name('login');
+Route::post('login', 'LoginController@login');
+
+// Logout Routes...
+Route::post('logout', 'LoginController@logout')->name('logout');
+Route::group(['middleware' => 'App\Http\Middleware\IsVerified'], function () {
     $siteModules = config('modules.types.Site');
     if ($siteModules) {
         foreach ($siteModules as $moduleName => $moduleSettings) {

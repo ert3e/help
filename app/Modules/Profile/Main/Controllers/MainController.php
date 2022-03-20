@@ -3,7 +3,7 @@
 namespace App\Modules\Profile\Main\Controllers;
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

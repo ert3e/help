@@ -33,7 +33,6 @@ class Controller extends BaseController
     {
         // инициализируем хлебные крошки и по умолчанию добавляем главную страницу
         $this->bc = new Breadcrumbs();
-        $this->bc->addCrumb('Главная', route('main'));
 
         // во все представления передаем хлебные крошки
         View::share('bc', $this->bc);

@@ -2,7 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\User;
+use App\Modules\Admin\Users\Models as User;
+use Ert3e\PhoneAuth\Models as Ert3;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,10 +19,15 @@ class IsVerified
     public function handle($request, Closure $next)
     {
 
-        if (Auth::user() && !Auth::user()->email_verified_at && env('USER_NEED_VERIFY')) {
-            Auth::logout();
+        if (Auth::user()) {
+            $userPhone = Auth::user()->phone;
+            $userPhoneConfirmed = Ert3\ConfirmedPhone::confirmed($userPhone);
 
-            return redirect()->route('main')->with('message_error', 'Ваш аккаунт не активирован! Активируйте аккаунт по ссылке, отправленной на почту!');
+            if (!$userPhoneConfirmed) {
+                Auth::logout();
+
+                return redirect()->route('main')->with('message_error', 'Ваш аккаунт не активирован! ');
+            }
         }
 
         return $next($request);

@@ -59,11 +59,17 @@
                         <a href="tel:{{ formattedLinkTelephone(setting('contacts.telephone_3')) }}" class="header__number">{{ setting('contacts.telephone_3') }}</a>
                     @endif
                 </div>
+                @guest
+                    <a href="{{ route('login') }}" class="header__to-logout">
+                        <span>Войти</span>
+                    </a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}" class="header__to-logout">
+                        <span>Выйти</span>
+                    </a>
+                @endauth
 
-                <a href="{{ route('want.help') }}" class="header__to-help">
-                    <img src="/images/site/heart.svg" alt="heart">
-                    <span>Хочу помочь</span>
-                </a>
             </div>
 
             <div class="header-panel">

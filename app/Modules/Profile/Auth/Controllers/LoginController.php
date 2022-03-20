@@ -2,8 +2,9 @@
 
 namespace App\Modules\Profile\Auth\Controllers;
 
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Controller;
+use App\Modules\Admin\Users\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -60,18 +61,15 @@ class LoginController extends ProfileController
      */
     public function login(Request $request): \Illuminate\Http\RedirectResponse
     {
+
         $request->validate([
-            'telephone' => 'required',
+            'telephone' => ['required', 'max:11']
         ]);
         $credentials = $request->only('telephone');
-        if (Auth::attempt($credentials)) {
 
-            auth()->user()->generateCode();
 
-            return redirect()->route('auth.index');
-        }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+       return redirect()->route('auth.index');
     }
 
     public function username()

@@ -4,6 +4,7 @@ namespace App\Modules\Profile\Auth\Controllers;
 
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Controller;
+use App\Modules\Profile\Auth\Models\UserCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
