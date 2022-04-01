@@ -297,6 +297,7 @@ html {
 
 .page .footer {
     margin-top: auto;
+    z-index: 1111;
 }
 
 * {
@@ -1117,12 +1118,15 @@ a {
     background: #08724D;
 }
 .header__to-logout {
+    font-family: 'Roboto';
+    font-style: normal;
     border: none;
     cursor: pointer;
     border-radius: .625rem;
     padding: 0 1rem;
     height: 2.125rem;
-    font-size: 0.875rem;
+    width: 2.125rem;
+    font-size: 1.21rem;
     font-weight: 700;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -1138,25 +1142,22 @@ a {
     background: #F4D4AA;
 }
 .header__to-login {
+    font-family: "Roboto";
+    font-style: normal;
     border: none;
     cursor: pointer;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     padding: 0 1rem;
-    height: 2.125rem;
-    font-size: 0.875rem;
+    height: 2.3rem;
+    font-size: 1rem;
     font-weight: 700;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     background: #0A8E60;
     color: #fff;
     margin-left: 1.85rem;
+    width: 9.188rem;
 }
 
 .header-panel {
@@ -2775,7 +2776,7 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .sos-form .input-group {
@@ -4062,7 +4063,8 @@ a {
     outline: none;
 }
 .login-form__part {
-    width: 24rem;
+    width: 22rem;
+    margin-top: 5.4rem;
 }
 .login-form__title {
     font-family: "Roboto";
@@ -4073,10 +4075,12 @@ a {
     letter-spacing: 0em;
     text-align: left;
 }
+
 .login {
     .login-form-phone {
-        width: 23.75rem;
+        width: 21.75rem;
         height: 3.125rem;
+        font-size: 1.5rem;
     }
     .login-form-phone::placeholder {
         font-family: 'Roboto';
@@ -4088,7 +4092,7 @@ a {
     }
     .login-form {
         &__row {
-            margin-top: 1.5rem;
+            margin-top: 2.5rem;
         }
     }
     &__container {
@@ -4100,13 +4104,14 @@ a {
         justify-content: space-between;
     }
 }
+
 .login-form-footer__btn {
     border: none;
     cursor: pointer;
     background: #0A8E60;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     padding: 0 1rem;
-    height: 4.125rem;
+    height: 3.125rem;
     font-size: 0.875rem;
     font-weight: 700;
     display: inline-flex;
@@ -4159,8 +4164,49 @@ a {
         }
     }
 }
-
-
+.update {
+    width: 100%;
+    max-width: 100%;
+    &__form {
+        display:flex;
+        justify-content: initial;
+    }
+    &__form-col {
+        flex-direction: column;
+        margin: 25px 25px;
+    }
+    &__phone-field {}
+    &__form-row {
+        flex-direction: column;
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        label {
+            color: #B1B1B1;
+            font-size: 0.75rem;
+            padding: 4px 0;
+            font-family: 'Roboto';
+            font-weight: 400, Regular;
+        }
+        input, select {
+            font-size: 1.125rem;
+            width: 16rem;
+            border: none;
+            border-bottom: 1px solid #C4C4C4;
+            padding: 4px 0px;
+            font-family: "Roboto";
+            font-weight: 400;
+            color: #00000099;
+        }
+        .phone-field::placeholder {
+            color: black;
+        }
+        input::placeholder, select::placeholder {
+            color: #00000099;
+            margin: 0px, 5px;
+        }
+    }
+}
 .alert-container {
     padding: 160px 0 100px;
     text-align: center;
@@ -4220,5 +4266,112 @@ a {
     color: #666;
     line-height: 130%;
 }
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-pointer {
+    text-decoration: underline;
+}
+.text-red-500 {
+    color: rgb(239 68 68);
+}
+.text-message {
+  font-size:  0.75rem;
+}
 
+.profile {
+    &__update-row {
+        width: 21.75rem;
+        height: 3.125rem;
+        margin-top: 2.5rem;
+        .login-form-phone::placeholder {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.75rem;
+            line-height: 28px;
+            color: #7C7C7C;
+        }
+    }
+    &__menu {
+        width: 260px;
+        background: #F3F3F3;
+        position: fixed;
+    }
+    &__menu_list {
+        padding-top: 10px;
+        height: 100vh;
+        overflow: hidden;
+    }
+    &__container {
+        transition: 0.3s;
+        min-height: calc(100% - 50px);
+        padding: 20px 15px 15px 15px;
+        width: calc(100% - 260px);
+        margin-left: 260px;
+        margin-top: -60px;
+    }
+    &__menu_username {
+        font-family: 'Roboto';
+        font-weight:  400;
+        font-size:  1.125rem;
+        padding: 0.75rem 2rem;
+    }
+    &__menu ul li a {
+        color: rgb(0, 0, 0) !important;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.75rem 2rem;
+        box-sizing: border-box;
+        text-decoration: none;
+        position: relative;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.125rem;
+    }
+    &__menu ul li.active {
+        background: #ECECEC;
+    }
+    &__menu ul li .active {
+        font-size: 11px;
+        background: #0A8E60;
+        margin-left: auto;
+        border-radius: 50%;
+        color: #fff;
+        width: 6px;
+        height: 6px;
+    }
+}
+.profile-head {
+    &__title {
+        width: 260px;
+        background: #F3F3F3;
+        position: fixed;
+        height: 282px;
+        font-size: 16px;
+    }
+    &__menu {
+        width: calc(100% - 260px);
+        height: 235px;
+        float: right;
+        .breadcrumbs {
+            height: 172px;
+            border-bottom: 1px solid #C4C4C4;
+            margin: 0 0;
+        }
+    }
+    &__avatar {
+        margin-left: 31px;
+        margin-top: 122px;
+    }
+}
+.pencil-icon {
+    margin-left: 60px;
+    margin-top: -25px;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}
 @import "adaptive";

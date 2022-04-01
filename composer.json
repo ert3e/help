@@ -13,7 +13,7 @@
         "codersstudio/sms-ru": "dev-master",
         "creitive/breadcrumbs": "^3.3",
         "doctrine/dbal": "^2.0",
-        "ert3e/laravel-phone-auth": "0.5.2.4",
+        "ert3e/laravel-phone-auth": "0.5.2.7",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",

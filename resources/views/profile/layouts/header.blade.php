@@ -46,8 +46,6 @@
             </div>
 
             <div class="header__right">
-
-
                 <div class="header__right_phones">
                     @if (setting('contacts.telephone'))
                         <a href="tel:{{ formattedLinkTelephone(setting('contacts.telephone')) }}" class="header__number">{{ setting('contacts.telephone') }}</a>
@@ -60,10 +58,16 @@
                     @endif
                 </div>
 
-                <a href="{{ route('want.help') }}" class="header__to-help">
-                    <img src="/images/site/heart.svg" alt="heart">
-                    <span>Хочу помочь</span>
-                </a>
+                @guest
+                    <a href="{{ route('login') }}" class="header__to-login">
+                        <span>Войти</span>
+                    </a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}" class="header__to-logout">
+                        <span>Выйти</span>
+                    </a>
+                @endauth
             </div>
 
             <div class="header-panel">
@@ -73,7 +77,7 @@
                                 <span class="search-info__close">
                                     <img src="/images/site/close.svg" alt="закрыть">
                                 </span>
-                            {{ Form::close() }}
+                    {{ Form::close() }}
                 </div>
                 <div class="header-panel__item" id="toggle-menu"><img src="/images/site/3line.svg" alt="toggle"></div>
             </div>
@@ -134,10 +138,4 @@
     </div>
 @endif
 
-@if (isset($bc) && Route::currentRouteName() != 'main')
-    <div class="container">
-        <div class="breadcrumbs">
-            {!! $bc->render() !!}
-        </div>
-    </div>
-@endif
+

@@ -8,7 +8,7 @@ return [
         "loginAfter" => true,
         "redirectTo" => false,
     ],
-
+    "code_sent" => "ERTY3",
     "emitSendCode" => false,
     "emitBefore" => false,
     "emitAfter" => false,

@@ -1,4 +1,5 @@
 "use strict";
+import IMask from 'imask';
 
 let app = {
 

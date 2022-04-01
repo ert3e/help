@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Modules\Profile\Auth\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +29,11 @@ Route::group(['middleware' => 'App\Http\Middleware\Admin', 'prefix' => 'admin'],
 });
 
 
-Route::get('login', 'LoginController@showLoginForm')->name('login');
-Route::post('login', 'LoginController@login');
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
 
 // Logout Routes...
-Route::post('logout', 'LoginController@logout')->name('logout');
+Route::post('logout', 'Model\Profile\LoginController@logout')->name('logout');
 Route::group(['middleware' => 'App\Http\Middleware\IsVerified'], function () {
     $siteModules = config('modules.types.Site');
     if ($siteModules) {

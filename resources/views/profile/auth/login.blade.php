@@ -14,6 +14,7 @@
                             :customParams="['btn' => 'Login', 'title' => 'Login']"
                             :formWrap="true"
                             :loginAndRegister="true"
+
                     />
                 </div>
             </div>

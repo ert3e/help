@@ -36,20 +36,6 @@
 </div>
 @endif
 
-<div class="app_menu">
-  <a href="/webapp/" class="sbor">Сборы</a>
-    <a href="/news/" class="news_link">Новости</a>
-      <a href="#" class="uved">Уведомления</a>
-        <a href="/accaunt/" class="user">Профиль</a>
-</div>
-    <div class="popup" id="zaglush_uved">Для просмотра уведомлений войдите<br><b>Закрыть</b></div>
-    <div class="popup" id="zaglush_prof">Регистрация недоступна, <br>платежи совершаются без регистрации<br><b>Закрыть</b></div>
-
-
-
-
-
-
 
 <div class="js">
 

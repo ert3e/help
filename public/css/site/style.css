@@ -271,6 +271,7 @@ html {
 
 .page .footer {
   margin-top: auto;
+  z-index: 1111;
 }
 
 * {
@@ -988,12 +989,15 @@ a {
 }
 
 .header__to-logout {
+  font-family: "Roboto";
+  font-style: normal;
   border: none;
   cursor: pointer;
   border-radius: 0.625rem;
   padding: 0 1rem;
   height: 2.125rem;
-  font-size: 0.875rem;
+  width: 2.125rem;
+  font-size: 1.21rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -1004,12 +1008,14 @@ a {
 }
 
 .header__to-login {
+  font-family: "Roboto";
+  font-style: normal;
   border: none;
   cursor: pointer;
   border-radius: 0.625rem;
   padding: 0 1rem;
-  height: 2.125rem;
-  font-size: 0.875rem;
+  height: 2.3rem;
+  font-size: 1rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -1017,6 +1023,7 @@ a {
   background: #0A8E60;
   color: #fff;
   margin-left: 1.85rem;
+  width: 9.188rem;
 }
 
 .header-panel {
@@ -2419,7 +2426,7 @@ a {
 
 .sos-form__row {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .sos-form .input-group {
@@ -3530,7 +3537,8 @@ a {
 }
 
 .login-form__part {
-  width: 24rem;
+  width: 22rem;
+  margin-top: 5.4rem;
 }
 
 .login-form__title {
@@ -3544,8 +3552,9 @@ a {
 }
 
 .login .login-form-phone {
-  width: 23.75rem;
+  width: 21.75rem;
   height: 3.125rem;
+  font-size: 1.5rem;
 }
 .login .login-form-phone::-moz-placeholder {
   font-family: "Roboto";
@@ -3580,7 +3589,7 @@ a {
   color: #7C7C7C;
 }
 .login .login-form__row {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 .login__container {
   display: flex;
@@ -3591,9 +3600,9 @@ a {
   border: none;
   cursor: pointer;
   background: #0A8E60;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   padding: 0 1rem;
-  height: 4.125rem;
+  height: 3.125rem;
   font-size: 0.875rem;
   font-weight: 700;
   display: inline-flex;
@@ -3643,6 +3652,70 @@ a {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+
+.update {
+  width: 100%;
+  max-width: 100%;
+}
+.update__form {
+  display: flex;
+  justify-content: initial;
+}
+.update__form-col {
+  flex-direction: column;
+  margin: 25px 25px;
+}
+.update__form-row {
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.update__form-row label {
+  color: #B1B1B1;
+  font-size: 0.75rem;
+  padding: 4px 0;
+  font-family: "Roboto";
+  font-weight: 400, Regular;
+}
+.update__form-row input, .update__form-row select {
+  font-size: 1.125rem;
+  width: 16rem;
+  border: none;
+  border-bottom: 1px solid #C4C4C4;
+  padding: 4px 0px;
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #00000099;
+}
+.update__form-row .phone-field::-moz-placeholder {
+  color: black;
+}
+.update__form-row .phone-field:-ms-input-placeholder {
+  color: black;
+}
+.update__form-row .phone-field::-ms-input-placeholder {
+  color: black;
+}
+.update__form-row .phone-field::placeholder {
+  color: black;
+}
+.update__form-row input::-moz-placeholder, .update__form-row select::-moz-placeholder {
+  color: #00000099;
+  margin: 0px, 5px;
+}
+.update__form-row input:-ms-input-placeholder, .update__form-row select:-ms-input-placeholder {
+  color: #00000099;
+  margin: 0px, 5px;
+}
+.update__form-row input::-ms-input-placeholder, .update__form-row select::-ms-input-placeholder {
+  color: #00000099;
+  margin: 0px, 5px;
+}
+.update__form-row input::placeholder, .update__form-row select::placeholder {
+  color: #00000099;
+  margin: 0px, 5px;
 }
 
 .alert-container {
@@ -3703,6 +3776,141 @@ a {
 .empty-items-list {
   color: #666;
   line-height: 130%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  text-decoration: underline;
+}
+
+.text-red-500 {
+  color: #ef4444;
+}
+
+.text-message {
+  font-size: 0.75rem;
+}
+
+.profile__update-row {
+  width: 21.75rem;
+  height: 3.125rem;
+  margin-top: 2.5rem;
+}
+.profile__update-row .login-form-phone::-moz-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 28px;
+  color: #7C7C7C;
+}
+.profile__update-row .login-form-phone:-ms-input-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 28px;
+  color: #7C7C7C;
+}
+.profile__update-row .login-form-phone::-ms-input-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 28px;
+  color: #7C7C7C;
+}
+.profile__update-row .login-form-phone::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 28px;
+  color: #7C7C7C;
+}
+.profile__menu {
+  width: 260px;
+  background: #F3F3F3;
+  position: fixed;
+}
+.profile__menu_list {
+  padding-top: 10px;
+  height: 100vh;
+  overflow: hidden;
+}
+.profile__container {
+  transition: 0.3s;
+  min-height: calc(100% - 50px);
+  padding: 20px 15px 15px 15px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  margin-top: -60px;
+}
+.profile__menu_username {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.125rem;
+  padding: 0.75rem 2rem;
+}
+.profile__menu ul li a {
+  color: black !important;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  position: relative;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+.profile__menu ul li.active {
+  background: #ECECEC;
+}
+.profile__menu ul li .active {
+  font-size: 11px;
+  background: #0A8E60;
+  margin-left: auto;
+  border-radius: 50%;
+  color: #fff;
+  width: 6px;
+  height: 6px;
+}
+
+.profile-head__title {
+  width: 260px;
+  background: #F3F3F3;
+  position: fixed;
+  height: 282px;
+  font-size: 16px;
+}
+.profile-head__menu {
+  width: calc(100% - 260px);
+  height: 235px;
+  float: right;
+}
+.profile-head__menu .breadcrumbs {
+  height: 172px;
+  border-bottom: 1px solid #C4C4C4;
+  margin: 0 0;
+}
+.profile-head__avatar {
+  margin-left: 31px;
+  margin-top: 122px;
+}
+
+.pencil-icon {
+  margin-left: 60px;
+  margin-top: -25px;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
 }
 
 @media screen and (max-width: 1200px) {

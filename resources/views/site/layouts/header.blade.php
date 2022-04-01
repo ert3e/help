@@ -46,8 +46,6 @@
             </div>
 
             <div class="header__right">
-
-
                 <div class="header__right_phones">
                     @if (setting('contacts.telephone'))
                         <a href="tel:{{ formattedLinkTelephone(setting('contacts.telephone')) }}" class="header__number">{{ setting('contacts.telephone') }}</a>
@@ -60,7 +58,7 @@
                     @endif
                 </div>
                 @guest
-                    <a href="{{ route('login') }}" class="header__to-logout">
+                    <a href="{{ route('login') }}" class="header__to-login">
                         <span>Войти</span>
                     </a>
                 @endguest

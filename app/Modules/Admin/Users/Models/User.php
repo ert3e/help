@@ -17,6 +17,7 @@ class User extends UserBase
     public $fillable = [
         'name',
         'last_name',
+        'avatar',
         'telephone',
         'phone',
         'address',

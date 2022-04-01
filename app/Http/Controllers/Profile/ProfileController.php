@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\View;
+use Illuminate\Http\Request;
 use Illuminate\View\FileViewFinder;
 
 class ProfileController extends Controller
@@ -21,6 +23,8 @@ class ProfileController extends Controller
         $finder = new FileViewFinder(app()['files'], [resource_path().'/views/profile']);
         View::setFinder($finder);
     }
+
+
 
     public static function redirect($action, $route, $params, $message = false) {
 

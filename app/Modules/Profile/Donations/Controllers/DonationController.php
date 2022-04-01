@@ -8,12 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class MainController extends ProfileController
+class DonationController extends ProfileController
 {
 
     public function index() {
-        $this->bc->addCrumb('Личный кабинет');
-        return view('dashboard.index');
+        return view('donation.index');
     }
 
     public function uploadAvatar(Request $request)
@@ -26,10 +25,6 @@ class MainController extends ProfileController
         $request->image->store('image', 'public');
     }
 
-    public function updateUser(Request $request)
-    {
-
-    }
     public function sortable($model, Request $request) {
 
         $modelPath = '\App\\Models\\'.$model.'Base';
