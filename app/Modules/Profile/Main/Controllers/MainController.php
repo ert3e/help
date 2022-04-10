@@ -7,6 +7,8 @@ use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Image;
+
 
 class MainController extends ProfileController
 {
@@ -18,16 +20,34 @@ class MainController extends ProfileController
 
     public function uploadAvatar(Request $request)
     {
-        if($request->hasFile('image')){
-            $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('images', $filename, 'public');
-            auth()->user()->update(['avatar' => $filename]);
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' .$avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/avatars/'. $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
         }
-        $request->image->store('image', 'public');
+        return view('dashboard.index');
     }
 
     public function updateUser(Request $request)
     {
+        //validation rules
+
+        $request->validate([
+            'name' =>'required|min:4|string|max:255',
+            'email'=>'required|email|string|max:255',
+            'address'=>'required|string|max:255'
+        ]);
+
+        $user = Auth::user();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->address = $request['address'];
+        $user->save();
+        return back()->with('message','Profile Updated');
 
     }
     public function sortable($model, Request $request) {

@@ -138,6 +138,17 @@ class PagesController extends SiteController
             $selected['id'] = $program->id;
         }
 
+        if (isset($_GET['referal']) &&
+            $program = Referal::find($_GET['referal'])) {
+            $selected['type'] = 'services';
+            $selected['id'] = $program->id;
+            return view('pages.wantHelp', [
+                'moduleSettings'    => $moduleSettings,
+                'data'              => $data,
+                'selected'          => $selected,
+            ]);
+        }
+
         return view('pages.wantHelp', [
             'moduleSettings'    => $moduleSettings,
             'data'              => $data,
@@ -147,8 +158,6 @@ class PagesController extends SiteController
 
       
     }
-
-
 
 
 
@@ -214,8 +223,6 @@ class PagesController extends SiteController
     }
 
 
-
-
     public function accaunt (Request $request) {
 
         $moduleTitle = 'Хочу помочь';
@@ -276,16 +283,6 @@ class PagesController extends SiteController
 
       
     }
-
-
-
-
-
-
-
-
-
-
 
 
     public function donation(Request $request) {

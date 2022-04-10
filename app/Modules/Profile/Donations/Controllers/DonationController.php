@@ -1,28 +1,35 @@
 <?php
 
-namespace App\Modules\Profile\Main\Controllers;
+namespace App\Modules\Profile\Donations\Controllers;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Profile\ProfileController;
+use App\Modules\Site\Main\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class DonationController extends ProfileController
 {
 
     public function index() {
-        return view('donation.index');
-    }
-
-    public function uploadAvatar(Request $request)
-    {
-        if($request->hasFile('image')){
-            $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('images', $filename, 'public');
-            auth()->user()->update(['avatar' => $filename]);
+        $this->bc->addCrumb('Личный кабинет');
+        $user = Auth::user();
+        $phone = $user->phone;
+        $sum = 0;
+        $payments = DB::table('payments')->where('telephone', $phone)
+            ->where('payment_status', 'succeeded')->get('amount');
+        foreach ($payments as $payment) {
+            $sum +=  $payment->amount;
         }
-        $request->image->store('image', 'public');
+
+        return view('donation.index',
+            [
+                'donations' => $sum,
+                'donations_href' => $sum,
+            ]
+        );
     }
 
     public function sortable($model, Request $request) {

@@ -64,8 +64,8 @@
                     </a>
                 @endguest
                 @auth
-                    <a href="{{ route('logout') }}" class="header__to-logout">
-                        <span>Выйти</span>
+                    <a href="{{ route('profile.main') }}" class="header__to-logout">
+                        <span>Личный кабинет</span>
                     </a>
                 @endauth
             </div>
@@ -126,15 +126,14 @@
 @endif
 
 @if ((isset($errors) && count($errors) > 0) || session('message_error'))
-    <div class="attention-container">
-        <div class="cw">
+    <div class="alert alert-success fade show in">
             @if (session('message_error'))
                 <p>{!! session('message_error') !!}</p>
             @endif
             @foreach ($errors->all() as $error)
                 <p>{{ $error }}</p>
             @endforeach
-        </div>
+
     </div>
 @endif
 

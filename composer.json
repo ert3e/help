@@ -17,7 +17,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
-        "intervention/image": "^2.5",
+        "intervention/image": "^2.7",
         "jenssegers/date": "^4.0",
         "laravel/framework": "^7.0",
         "laravel/sanctum": "^2.14",

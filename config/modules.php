@@ -119,6 +119,7 @@ return [
         ],
         'Profile' => [
             'Main'          => [],
+            'Donations'          => [],
             'Auth'          => []
         ]
     ]

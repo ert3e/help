@@ -24,8 +24,6 @@ class ProfileController extends Controller
         View::setFinder($finder);
     }
 
-
-
     public static function redirect($action, $route, $params, $message = false) {
 
         if ($action != self::ROUTE_BACK) {

@@ -9,14 +9,14 @@ let phoneUpdate = document.getElementById('phone');
 let emailUpdate = document.getElementById('email');
 if (phoneLoginElement) {
     let phoneLogin = IMask(phoneLoginElement, {
-        mask: '+{0}(000)000-00-00',
+        mask: '+00(000)000-00-00',
         lazy: false,  // make placeholder always visible
         placeholderChar: '0'     // defaults to '_'
     });
 }
 if(phoneUpdate){
     let phoneUpdateElement = IMask(phoneUpdate, {
-        mask: '+{0}(000)000-00-00',
+        mask: '+00(000)000-00-00',
         lazy: false,  // make placeholder always visible
         placeholderChar: '0'
     });

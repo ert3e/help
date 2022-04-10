@@ -63,8 +63,8 @@
                     </a>
                 @endguest
                 @auth
-                    <a href="{{ route('logout') }}" class="header__to-logout">
-                        <span>Выйти</span>
+                    <a href="{{ route('profile.main') }}" class="header__to-logout">
+                        <span>Личный кабинет</span>
                     </a>
                 @endauth
 

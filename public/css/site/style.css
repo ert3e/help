@@ -935,11 +935,9 @@ a {
   color: #000;
   cursor: text;
 }
-
 .header .search-info__input:focus + span {
   display: block !important;
 }
-
 .header .search-info__close {
   position: absolute;
   top: 50%;
@@ -948,18 +946,15 @@ a {
   cursor: pointer;
   display: none;
 }
-
 .header .search-info__close img {
   width: 0.5625rem;
 }
-
 .header__number {
   font-size: 0.875rem;
 }
 .header__number:hover {
   text-decoration: underline;
 }
-
 .header__to-help {
   border: none;
   cursor: pointer;
@@ -975,38 +970,37 @@ a {
   color: #fff;
   margin-left: 1.85rem;
 }
-
 .header__to-help img {
   width: 0.875rem;
 }
-
 .header__to-help > *:nth-child(2) {
   margin-left: 0.5rem;
 }
-
 .header__to-help:hover {
   background: #08724D;
 }
-
 .header__to-logout {
-  font-family: "Roboto";
   font-style: normal;
   border: none;
   cursor: pointer;
   border-radius: 0.625rem;
-  padding: 0 1rem;
-  height: 2.125rem;
-  width: 2.125rem;
-  font-size: 1.21rem;
+  padding: 0 0.5rem;
+  height: 2.225rem;
+  width: 9.1875rem;
+  font-size: 1rem;
   font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin-left: 1.85rem;
+  color: #000000;
   background: #F4D4AA;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
-
+.header__to-logout span {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 0.875rem;
+}
 .header__to-login {
   font-family: "Roboto";
   font-style: normal;
@@ -1024,6 +1018,9 @@ a {
   color: #fff;
   margin-left: 1.85rem;
   width: 9.188rem;
+}
+.header__to-login:hover {
+  background: #08724D;
 }
 
 .header-panel {
@@ -1728,6 +1725,9 @@ a {
   justify-content: center;
   background: #0A8E60;
   color: #fff;
+}
+.home .preview__to-help :hover {
+  background: #08724D;
 }
 
 .home .preview__to-help img {
@@ -3658,13 +3658,33 @@ a {
   width: 100%;
   max-width: 100%;
 }
+.update__form-button {
+  font-family: "Roboto";
+  font-style: normal;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  padding: 0 1rem;
+  height: 2.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0A8E60;
+  color: #fff;
+  margin-left: 1.85rem;
+  width: 9.188rem;
+}
 .update__form {
   display: flex;
-  justify-content: initial;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
 .update__form-col {
   flex-direction: column;
-  margin: 25px 25px;
+  margin: 2rem 2rem;
 }
 .update__form-row {
   flex-direction: column;
@@ -3688,6 +3708,13 @@ a {
   font-family: "Roboto";
   font-weight: 400;
   color: #00000099;
+}
+.update__form-row input[type=text]:disabled {
+  cursor: default;
+  background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+  color: -internal-light-dark(#545454, #aaaaaa);
+  border-color: rgba(118, 118, 118, 0.3);
+  background: url(/images/site/locked.svg) no-repeat right center;
 }
 .update__form-row .phone-field::-moz-placeholder {
   color: black;
@@ -3794,6 +3821,14 @@ a {
   font-size: 0.75rem;
 }
 
+.profile__container {
+  transition: 0.3s;
+  min-height: calc(100% - 50px);
+  padding: 20px 15px 15px 15px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  margin-top: -60px;
+}
 .profile__update-row {
   width: 21.75rem;
   height: 3.125rem;
@@ -3841,14 +3876,6 @@ a {
   height: 100vh;
   overflow: hidden;
 }
-.profile__container {
-  transition: 0.3s;
-  min-height: calc(100% - 50px);
-  padding: 20px 15px 15px 15px;
-  width: calc(100% - 260px);
-  margin-left: 260px;
-  margin-top: -60px;
-}
 .profile__menu_username {
   font-family: "Roboto";
   font-weight: 400;
@@ -3882,6 +3909,47 @@ a {
   height: 6px;
 }
 
+.donation__container {
+  transition: 0.3s;
+  min-height: calc(100% - 50px);
+  padding: 20px 15px 15px 36px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  margin-top: -30px;
+}
+.donation__section {
+  padding: 1.25rem;
+}
+.donation__section .all {
+  color: #0A8E60;
+}
+.donation__section .all .heart {
+  color: #0A8E60;
+}
+.donation__section .donation__sum {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.donation__title {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.donation__part {
+  width: 21rem;
+}
+.donation__money {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  width: 100%;
+}
+.donation__money .bottom-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.donation img {
+  width: 0.875rem;
+}
+
 .profile-head__title {
   width: 260px;
   background: #F3F3F3;
@@ -3897,7 +3965,11 @@ a {
 .profile-head__menu .breadcrumbs {
   height: 172px;
   border-bottom: 1px solid #C4C4C4;
-  margin: 0 0;
+  padding: 0 1rem;
+}
+.profile-head__menu .breadcrumbs span {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .profile-head__avatar {
   margin-left: 31px;
@@ -3907,6 +3979,7 @@ a {
 .pencil-icon {
   margin-left: 60px;
   margin-top: -25px;
+  position: absolute;
 }
 
 .rounded-circle {

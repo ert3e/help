@@ -8,7 +8,7 @@ return [
         "loginAfter" => true,
         "redirectTo" => false,
     ],
-    "code_sent" => "ERTY3",
+    "code_default" => "ERT3",
     "emitSendCode" => false,
     "emitBefore" => false,
     "emitAfter" => false,
@@ -26,7 +26,7 @@ return [
 
 
     "sms_service" => [
-        "class" =>App\Utilities\PhoneAuth\SentSmsRu::class,
+        "class" => App\Utilities\PhoneAuth\SentSmsRu::class,
         "settings" => [],
     ]
 ];

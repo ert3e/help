@@ -44,6 +44,9 @@ class Payment extends PaymentBase
 
     public static function createPay(Request $request) {
 
+        if (isset($request->telephone)) {
+            $data['telephone'] =  preg_replace('/[^0-9]/', '', $request->telephone);
+        }
         $data['amount'] = $request->sum_ready;
         if (isset($request->sum_number) && $request->sum_number > 0) {
             $data['amount'] = $request->sum_number;

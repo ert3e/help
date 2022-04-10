@@ -67,8 +67,6 @@ class LoginController extends ProfileController
         ]);
         $credentials = $request->only('telephone');
 
-
-
        return redirect()->route('auth.index');
     }
 
