@@ -31,7 +31,9 @@
                                 <p class="form-condition">Нажимая на кнопку, вы принимаете<br><a href="{{ route('pages', $page->slug) }}"><u>условия сбора пожертвований</u></a></p>
                             @endif
                         </div>
-
+                    @if ($code)
+                        <input name="code" value="{{ $code }}" type="hidden">
+                    @endif
                     {{ Form::close() }}
                 </div>
 

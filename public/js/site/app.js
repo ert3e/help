@@ -20214,6 +20214,24 @@ if (emailUpdate) {
     lazy: false // make placeholder always visible
 
   });
+} //getting text from P tag
+
+
+var copyText = document.getElementById("clipboard");
+
+if (copyText) {
+  document.querySelector('#clipboard').addEventListener('click', function (e) {
+    e.preventDefault();
+    var input = document.createElement("textarea"); //adding p tag text to textarea
+
+    input.value = copyText.href;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("Copy"); // removing textarea after copy
+
+    input.remove();
+    alert(input.value);
+  }); // creating textarea of html
 }
 
 /***/ }),

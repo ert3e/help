@@ -37,12 +37,14 @@ trait ImageManager {
     }
 
 
-    public function itemImageFolder() {
+    public function itemImageFolder(): string
+    {
         return 'storage/'.self::$mediaFolder.'/'.$this->id;
     }
 
 
-    public function itemImageFolderSystem() {
+    public function itemImageFolderSystem(): string
+    {
         return 'public/'.self::$mediaFolder.'/'.$this->id;
     }
 

@@ -15,6 +15,7 @@ class Payment extends BaseModel
         'item_type',
         'donation_type',
         'telephone',
+        'code',
         'payment_id',
         'payment_status',
         'save_payment_method',

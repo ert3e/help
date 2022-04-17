@@ -137,26 +137,24 @@ class PagesController extends SiteController
             $selected['type'] = 'services';
             $selected['id'] = $program->id;
         }
+        $code = '';
 
-        if (isset($_GET['referal']) &&
-            $program = Referal::find($_GET['referal'])) {
-            $selected['type'] = 'services';
-            $selected['id'] = $program->id;
-            return view('pages.wantHelp', [
-                'moduleSettings'    => $moduleSettings,
-                'data'              => $data,
-                'selected'          => $selected,
-            ]);
+        if (isset($_GET['referral'])){
+            $code = $_GET['referral'];
+            $request->session()->put('referral', $_GET['referral']);
+        }
+
+        if ($request->session()->get('referral')){
+            $code = $request->session()->get('referral');
         }
 
         return view('pages.wantHelp', [
             'moduleSettings'    => $moduleSettings,
             'data'              => $data,
             'selected'          => $selected,
+            'code'          => $code,
         ]);
 
-
-      
     }
 
 

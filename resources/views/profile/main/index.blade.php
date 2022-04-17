@@ -5,7 +5,6 @@
     <div class="home">
         <section class="preview">
             <div class="container">
-
                 <div class="preview__top-wrapper">
                     <div class="preview__left">
 <!--                        <h1 class="preview__title">

@@ -18,11 +18,33 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
           integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     {!! setting('main.header_js') !!}
+    @if ($agent->isMobile())
+        <link rel="stylesheet" href="{{ mix('css/site/style_app.css') }}">
+    @endif
 </head>
 
 
 <body {{ Route::currentRouteName() != 'main' ? 'class=pages' : 'id=index-page' }}>
 
+@if ($agent->isMobile())
+    <div class="preloader" style="
+       position: fixed;
+        left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          background: #fff;
+          z-index: 99999999;
+        ">
+        <div class="preloader__row" style="    display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;">
+            <img src="/images/site/logo.svg" alt="фонд Азим" width="70%">
+        </div>
+    </div>
+@endif
 <div id="app" class="page">
     @include('layouts.header')
     @yield('sidebar')
@@ -31,11 +53,14 @@
     @include('layouts.footer')
 </div>
 
-
-
-
-
-
+@if ($agent->isMobile())
+<div class="app_menu">
+    <a href="/webapp/" class="sbor">Сборы</a>
+    <a href="/news/" class="news_link">Новости</a>
+    <a href="#" class="uved">Уведомления</a>
+    <a href="/profile/" class="user">Профиль</a>
+</div>
+@endif
 <div class="js">
 
 <script src="/js/site/vendor.min.js"></script>
@@ -43,11 +68,39 @@
 
 
 @yield('footer_js')
-{!! setting('main.footer_js') !!}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {!! setting('main.footer_js') !!}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @livewireScripts
+    <script type="text/javascript">
+       /* if ( $.cookie('name') ) {
+            var ss = document.createElement("link");
+            ss.rel = "stylesheet";
+            ss.href = "/css/site/style_app.css";
+            ss.type = "text/css";
+            ss.media = "all";
+            document.getElementsByTagName("head")[0].appendChild(ss);
 
+        }*/
+        if ( $.cookie('name') ) {
+            $(".header__logo").attr("href", "/webapp/")
+        }
+        if ($(".news_m").length){
+            // делаем здесь что-то
+            $('.news_link').addClass('no_filter');
+        }
+
+        if ($(".picking_m").length){
+            // делаем здесь что-то
+            $('.sbor').addClass('no_filter');
+
+        }
+        if ($("#profile_menu").length){
+            // делаем здесь что-то
+            $('.user').addClass('no_filter');
+
+        }
+    </script>
 </div>
 
 </body>

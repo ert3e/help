@@ -14,14 +14,33 @@
     <link rel="shortcut icon" href="/favicon.svg" type="image/xml+svg">
     @include('templates.seo.touchIcons')
     <link rel="stylesheet" href="{{ mix('css/site/style.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    <link rel="stylesheet" h
+          ref="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
           integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     {!! setting('main.header_js') !!}
 </head>
 
 
 <body {{ Route::currentRouteName() != 'main' ? 'class=pages' : 'id=index-page' }}>
-
+@if ($agent->isMobile())
+    <div class="preloader" style="
+       position: fixed;
+        left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          background: #fff;
+          z-index: 99999999;
+        ">
+        <div class="preloader__row" style="    display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;">
+            <img src="/images/site/logo.svg" alt="фонд Азим" width="70%">
+        </div>
+    </div>
+@endif
 <div id="app" class="page">
     @include('layouts.header')
     @yield('content')
@@ -35,8 +54,14 @@
     @yield('modals')
 </div>
 @endif
-
-
+@if ($agent->isMobile())
+    <div class="app_menu">
+        <a href="/webapp/" class="sbor">Сборы</a>
+        <a href="/news/" class="news_link">Новости</a>
+        <a href="#" class="uved">Уведомления</a>
+        <a href="/profile/" class="user">Профиль</a>
+    </div>
+@endif
 <div class="js">
 
 <script src="/js/site/vendor.min.js"></script>
@@ -59,46 +84,35 @@ $('#zaglush_uved').click(function() { // Обрабатываем клик по 
 })
 
 </script>
-
-      <script type="text/javascript">
+<script type="text/javascript">
     if ( $.cookie('name') == null ) {
  
-}
-else {
-   var ss = document.createElement("link");
+    } else {
+        var ss = document.createElement("link");
             ss.rel = "stylesheet";
             ss.href = "/css/site/style_app.css";
             ss.type = "text/css";
             ss.media = "all";
             document.getElementsByTagName("head")[0].appendChild(ss);
 
-         
-};
-
+    };
     if ( $.cookie('name') == null ) {
- 
-}
-else {
 
-   $(".header__logo").attr("href", "/webapp/")
-};
+    } else {
+        $(".header__logo").attr("href", "/webapp/")
+    };
+    if ($(".news_m").length){
+      // делаем здесь что-то
+    $('.news_link').addClass('no_filter');
 
-if ($(".news_m").length){
-  // делаем здесь что-то 
-$('.news_link').addClass('no_filter');  
+    }
 
-}
+    if ($(".picking_m").length){
+      // делаем здесь что-то
+        $('.sbor').addClass('no_filter');
 
-if ($(".picking_m").length){
-  // делаем здесь что-то 
-$('.sbor').addClass('no_filter');  
-
-}
-
-
-
-  </script>
-
+    }
+</script>
 
 </div>
   <script>
@@ -162,7 +176,13 @@ $('.sbor').addClass('no_filter');
       localStorage.setItem('tabs-index', index);
     });
   </script>
-
-
+    <script type="text/javascript">
+        window.onload = function () {
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 800);
+        }
+    </script>
 </body>
 </html>

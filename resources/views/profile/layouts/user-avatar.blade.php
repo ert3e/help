@@ -1,7 +1,7 @@
 <div class="profile-head__avatar">
 @auth
         @if (auth()->user()->avatar)
-            <img height="86" src="/uploads/avatars/{{ auth()->user()->avatar }}" alt="Profile Photo" class=" rounded-circle">
+            <img height="86" onclick="document.getElementById('avatar').click();"  src="/uploads/avatars/{{ auth()->user()->avatar }}" alt="Profile Photo" class=" rounded-circle">
 
                 <div class="pencil-icon" onclick="document.getElementById('avatar').click();">
                     <img src="/images/site/Subtract.svg" alt="Add photo">
@@ -11,7 +11,7 @@
                     <input type="hidden"  name="_token" value="{{ csrf_token() }}">
                 </form>
         @else
-            <img height="86" src="http://www.gravatar.com/avatar/?d=identicon" alt="Profile Photo" class=" rounded-circle">
+            <img onclick="document.getElementById('avatar').click();" height="86" src="http://www.gravatar.com/avatar/?d=identicon" alt="Profile Photo" class=" rounded-circle">
             <div class="pencil-icon" onclick="document.getElementById('avatar').click();">
                 <img src="/images/site/Subtract.svg" alt="Add photo">
             </div>

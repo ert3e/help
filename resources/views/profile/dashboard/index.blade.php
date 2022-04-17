@@ -1,8 +1,14 @@
-
 @extends('layouts.app')
-
 @section('sidebar')
     <div class="container">
+        <div class="user_cart">
+        <div class="avatar">
+            @include('layouts.user-avatar')
+        </div>
+        <div class="login"><a href="#">Войти или зарегистрироваться</a></div>
+    </div>
+    </div>
+    <div class="container hidden">
         <div class="profile-head__title">
             @include('layouts.user-avatar')
         </div>
@@ -14,8 +20,8 @@
             @endif
         </div>
     </div>
-    <div class="container">
-    @include('layouts.sidebar')
+    <div class="container ">
+        @include('layouts.sidebar')
 @endsection
 @section('content')
      <aside id="content" class="profile__container">

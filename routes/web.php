@@ -34,21 +34,21 @@ Route::post('login', [LoginController::class, 'login']);
 
 // Logout Routes...
 Route::post('logout', 'Model\Profile\LoginController@logout')->name('logout');
-Route::group(['middleware' => 'App\Http\Middleware\IsVerified'], function () {
+Route::group(['middleware' => ['web']], function () {
     $siteModules = config('modules.types.Site');
     if ($siteModules) {
         foreach ($siteModules as $moduleName => $moduleSettings) {
             $routesFile = base_path('app/Modules/Site/' . $moduleName . '/Routes/web.php');
 
             if (file_exists($routesFile)) {
-                Route::namespace("\\App\\Modules\\Site\\$moduleName\\Controllers")->middleware('App\Http\Middleware\IsVerified')->group($routesFile);
+                Route::namespace("\\App\\Modules\\Site\\$moduleName\\Controllers")->group($routesFile);
             }
         }
     }
 });
 
 // подключаем все роуты модулей сайта
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => 'App\Http\Middleware\IsVerified'], function () {
 
     $siteModules = config('modules.types.Profile');
     if ($siteModules) {

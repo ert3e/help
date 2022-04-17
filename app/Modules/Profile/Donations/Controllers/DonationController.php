@@ -4,6 +4,8 @@ namespace App\Modules\Profile\Donations\Controllers;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Profile\ProfileController;
+use App\Models\Referral;
+use App\Modules\Admin\Users\Models\User;
 use App\Modules\Site\Main\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,19 +19,53 @@ class DonationController extends ProfileController
         $this->bc->addCrumb('Личный кабинет');
         $user = Auth::user();
         $phone = $user->phone;
+
         $sum = 0;
-        $payments = DB::table('payments')->where('telephone', $phone)
+        $sumRef = 0;
+
+        $referral_link = $user->referral;
+
+        if (!$referral_link) {
+            $code = $this->generateRandomString(7);
+            $referral = new Referral(['code' => $code]);
+            $user->referral()->save($referral);
+            $referral_link = $user->referral;
+        }
+
+        $payments = DB::table('payments')
+            ->where('telephone', $phone)
             ->where('payment_status', 'succeeded')->get('amount');
+
+        $paymentsRef = DB::table('payments')
+            ->where('payment_status', 'succeeded')
+            ->where('code', $referral_link->code)
+            ->get('amount');
+
         foreach ($payments as $payment) {
-            $sum +=  $payment->amount;
+            $sum += $payment->amount;
+        }
+
+        foreach ($paymentsRef as $paymentRef) {
+            $sumRef += $paymentRef->amount;
         }
 
         return view('donation.index',
             [
                 'donations' => $sum,
-                'donations_href' => $sum,
+                'donations_code' => $referral_link->code,
+                'donations_ref' => $sumRef,
             ]
         );
+    }
+
+    public function generateRandomString($length = 20) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
     public function sortable($model, Request $request) {

@@ -3,7 +3,7 @@ $route = Route::current();
 
 $uri = $route->uri;
 ?>
-<aside id="profile_menu" class="profile__menu">
+<aside id="profile_menu" class="profile__menu hidden">
     <div class="profile__menu_devider">
         <div class="profile__menu_username">
             <span>

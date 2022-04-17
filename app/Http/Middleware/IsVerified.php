@@ -29,7 +29,10 @@ class IsVerified
                 return redirect()->route('main')->with('message_error', 'Ваш аккаунт не активирован! ');
             }
         }
-
-        return $next($request);
+        if (Auth::check()) {
+            return $next($request);
+        } else {
+            return redirect()->route('login');
+        }
     }
 }
