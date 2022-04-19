@@ -8,6 +8,7 @@ use App\Modules\Admin\Users\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -40,7 +41,6 @@ class LoginController extends ProfileController
      */
     public function __construct()
     {
-
         parent::__construct();
         $this->middleware('guest')->except('logout');
     }
@@ -52,7 +52,11 @@ class LoginController extends ProfileController
      */
     public function showLoginForm(): \Illuminate\View\View
     {
-        return view('auth.login');
+        $this->bc->addCrumb('Вернутся назад', '/');
+        View::share('title', 'Авторизация');
+        return view('auth.login', [
+            'title' => 'Авторизация'
+        ]);
     }
 
     /**

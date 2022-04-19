@@ -1,4 +1,4 @@
-  <div class="preloader" 
+  <div class="preloader"
     style="
    position: fixed;
     left: 0;
@@ -45,8 +45,8 @@
     
         <section class="poor">
             <div class="container">
-                              <div class="poor-slider">
-                 @foreach($pickingsCompleted as $picking)
+                <div class="poor-slider">
+                    @foreach($pickingsCompleted as $picking)
                         <div class="poor-slider__slide">
                             @include('catalog._picking')
                         </div>
@@ -60,7 +60,6 @@
 
   </div>
 </div>
-
 @endsection
 
 @section('footer_js')

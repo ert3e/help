@@ -18,8 +18,10 @@
           ref="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
           integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     {!! setting('main.header_js') !!}
+    @if ($agent->isMobile())
+        <link rel="stylesheet" href="{{ mix('css/site/style_app.css') }}">
+    @endif
 </head>
-
 
 <body {{ Route::currentRouteName() != 'main' ? 'class=pages' : 'id=index-page' }}>
 @if ($agent->isMobile())
@@ -41,25 +43,23 @@
         </div>
     </div>
 @endif
-<div id="app" class="page">
-    @include('layouts.header')
-    @yield('content')
-    @include('layouts.footer')
-</div>
-
-
+    <div id="app" class="page">
+        @include('layouts.header')
+        @yield('content')
+        @include('layouts.footer')
+    </div>
 
 @if (trim($__env->yieldContent('modals')))
-<div class="modal-window-layout">
-    @yield('modals')
-</div>
+    <div class="modal-window-layout">
+        @yield('modals')
+    </div>
 @endif
 @if ($agent->isMobile())
     <div class="app_menu">
-        <a href="/webapp/" class="sbor">Сборы</a>
+        <a href="/" class="sbor">Сборы</a>
         <a href="/news/" class="news_link">Новости</a>
         <a href="#" class="uved">Уведомления</a>
-        <a href="/profile/" class="user">Профиль</a>
+        <a href="/donation/" class="user">Профиль</a>
     </div>
 @endif
 <div class="js">
@@ -85,29 +85,14 @@ $('#zaglush_uved').click(function() { // Обрабатываем клик по 
 
 </script>
 <script type="text/javascript">
-    if ( $.cookie('name') == null ) {
- 
-    } else {
-        var ss = document.createElement("link");
-            ss.rel = "stylesheet";
-            ss.href = "/css/site/style_app.css";
-            ss.type = "text/css";
-            ss.media = "all";
-            document.getElementsByTagName("head")[0].appendChild(ss);
 
-    };
-    if ( $.cookie('name') == null ) {
-
-    } else {
-        $(".header__logo").attr("href", "/webapp/")
-    };
     if ($(".news_m").length){
       // делаем здесь что-то
     $('.news_link').addClass('no_filter');
 
     }
 
-    if ($(".picking_m").length){
+    if ($(".webapp").length){
       // делаем здесь что-то
         $('.sbor').addClass('no_filter');
 
@@ -176,13 +161,15 @@ $('#zaglush_uved').click(function() { // Обрабатываем клик по 
       localStorage.setItem('tabs-index', index);
     });
   </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            window.setTimeout(function () {
-                document.body.classList.add('loaded');
-                document.body.classList.remove('loaded_hiding');
-            }, 800);
-        }
-    </script>
+    @if ($agent->isMobile())
+        <script type="text/javascript">
+            window.onload = function () {
+                window.setTimeout(function () {
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('loaded_hiding');
+                }, 800);
+            }
+        </script>
+    @endif
 </body>
 </html>

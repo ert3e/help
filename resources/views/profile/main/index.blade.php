@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
+        <div class="return">
 
+        </div>
+    </div>
     <div class="home">
         <section class="preview">
             <div class="container">
@@ -109,7 +113,6 @@
             </div>
         </section>
         @endif
-
         <section class="appeal">
             <div class="container">
                 <div class="appeal__content">
@@ -135,15 +138,12 @@
         <section class="portfolio">
             <div class="container">
                 <a href="{{ route('catalog', $category->path) }}" class="portfolio__title">{{ $category->title }}</a>
-
                 <div class="portfolio-slider">
-
                     @foreach($pickingsCompleted as $picking)
                         <div class="portfolio-slider__slide">
                             @include('catalog._picking')
                         </div>
                     @endforeach
-
                 </div>
             </div>
         </section>
@@ -167,6 +167,7 @@
                         variableWidth: true,
                         infinite: true,
                         arrows: false,
+                        centerMode: false,
                     }
                 },
             ]

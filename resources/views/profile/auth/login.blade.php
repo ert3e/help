@@ -3,7 +3,6 @@
 @section('content')
     <div class="login">
         <div class="container">
-
             <div class="login__container">
                 <div class="login-form__part">
                     <div class="login-form__title">Пожалуйста укажите свой телефон </div>
@@ -14,7 +13,6 @@
                             :customParams="['btn' => 'Login', 'title' => 'Login']"
                             :formWrap="true"
                             :loginAndRegister="true"
-
                     />
                 </div>
             </div>

@@ -1,11 +1,19 @@
 @extends('layouts.app')
 @section('sidebar')
+    @if ($agent->isMobile())
+        <div class="container">
+            <div class="return">
+                <a href="/donation/" class="arrow"></a>
+                <span> Вернутся назад</span>
+            </div>
+        </div>
+    @endif
     <div class="container">
         <div class="user_cart">
         <div class="avatar">
             @include('layouts.user-avatar')
         </div>
-        <div class="login"><a href="#">Войти или зарегистрироваться</a></div>
+        <div class="login"><a href="#" onclick="document.getElementById('avatar').click();">Изменить фото профиля</a></div>
     </div>
     </div>
     <div class="container hidden">

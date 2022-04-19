@@ -2,12 +2,22 @@
 @extends('layouts.app')
 
 @section('sidebar')
+    @if ($agent->isMobile())
+        <div class="container">
+            <div class="return">
+
+            </div>
+        </div>
+    @endif
     <div class="container">
         <div class="user_cart">
             <div class="avatar">
                 @include('layouts.user-avatar')
             </div>
-            <div class="login"><a href="#">Войти или зарегистрироваться</a></div>
+            <div class="user_info">
+                {{ auth()->user()->name }}
+            </div>
+
         </div>
     </div>
     <div class="container hidden">

@@ -1412,7 +1412,7 @@ a {
 
 .poor-card__img {
     display: block;
-    width: 15.5rem;
+    /*width: 15.5rem;*/
     height: 12.9375rem;
     border-radius: .625rem;
     position: relative;
@@ -4116,11 +4116,11 @@ a {
 
             span {
                 font-family: 'Roboto';
-                font-size: 20px;
+                font-size: 2rem;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 23px;
-                letter-spacing: 0em;
+                letter-spacing: 0rem;
                 text-align: left;
             }
         }
@@ -4202,7 +4202,7 @@ a {
                 font-size: 0.75rem;
                 padding: 4px 0;
                 font-family: 'Roboto';
-                font-weight: 400, Regular;
+                font-weight: 400;
             }
             input, select {
                 font-size: 1.125rem;
@@ -4475,4 +4475,4 @@ a {
         display: none;
     }
     @import "adaptive";
-}
+

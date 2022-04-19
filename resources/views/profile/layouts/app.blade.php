@@ -54,12 +54,12 @@
 </div>
 
 @if ($agent->isMobile())
-<div class="app_menu">
-    <a href="/webapp/" class="sbor">Сборы</a>
-    <a href="/news/" class="news_link">Новости</a>
-    <a href="#" class="uved">Уведомления</a>
-    <a href="/profile/" class="user">Профиль</a>
-</div>
+    <div class="app_menu">
+        <a href="/" class="sbor">Сборы</a>
+        <a href="/news/" class="news_link">Новости</a>
+        <a href="#" class="uved">Уведомления</a>
+        <a href="/profile/" class="user">Профиль</a>
+    </div>
 @endif
 <div class="js">
 
@@ -82,15 +82,13 @@
             document.getElementsByTagName("head")[0].appendChild(ss);
 
         }*/
-        if ( $.cookie('name') ) {
-            $(".header__logo").attr("href", "/webapp/")
-        }
+
         if ($(".news_m").length){
             // делаем здесь что-то
             $('.news_link').addClass('no_filter');
         }
 
-        if ($(".picking_m").length){
+        if ($(".webapp").length){
             // делаем здесь что-то
             $('.sbor').addClass('no_filter');
 
@@ -101,6 +99,16 @@
 
         }
     </script>
+    @if ($agent->isMobile())
+        <script type="text/javascript">
+            window.onload = function () {
+                window.setTimeout(function () {
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('loaded_hiding');
+                }, 800);
+            }
+        </script>
+    @endif
 </div>
 
 </body>

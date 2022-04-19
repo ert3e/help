@@ -7,14 +7,15 @@ use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use Image;
-
+use App\Models\RelationModels\Image;
+use Illuminate\Support\Facades\View;
 
 class MainController extends ProfileController
 {
 
     public function index() {
         $this->bc->addCrumb('Личный кабинет');
+        View::share('title', 'Анкета');
         return view('dashboard.index');
     }
 

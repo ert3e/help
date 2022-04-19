@@ -3,8 +3,11 @@
 @include('templates.seo.meta', ['object' => $picking])
 
 @section('content')
-
+    <div class="container">
+        <div class="return"><a href="/" class="arrow"></a> <span> Вернутся назад</span></div>
+    </div>
     <div class="pauper-person picking_m">
+
         <div class="container">
 
             <h1 class="page-title">@include('templates.seo.title', ['object' => $picking])</h1>

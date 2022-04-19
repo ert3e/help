@@ -21,6 +21,7 @@ class ProfileController extends Controller
         parent::__construct();
 
         $finder = new FileViewFinder(app()['files'], [resource_path().'/views/profile']);
+
         View::setFinder($finder);
     }
 

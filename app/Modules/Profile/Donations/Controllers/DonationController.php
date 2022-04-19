@@ -11,12 +11,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 
 class DonationController extends ProfileController
 {
 
     public function index() {
         $this->bc->addCrumb('Личный кабинет');
+        View::share('title', 'edit_profile');
         $user = Auth::user();
         $phone = $user->phone;
 

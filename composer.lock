@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20c782538fc33d5ff66cfceb164e404a",
+    "content-hash": "fcec4f419159c2d82d6fcbab57347a68",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -941,16 +941,16 @@
         },
         {
             "name": "ert3e/laravel-phone-auth",
-            "version": "0.5.2.7",
+            "version": "0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ert3e/laravel-livewire-phone-auth.git",
-                "reference": "8d49a663ea9f6ffa24704c411463b2846a3b7780"
+                "reference": "eda245123c4e006eaef9b987f9bea46cbe454a6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ert3e/laravel-livewire-phone-auth/zipball/8d49a663ea9f6ffa24704c411463b2846a3b7780",
-                "reference": "8d49a663ea9f6ffa24704c411463b2846a3b7780",
+                "url": "https://api.github.com/repos/ert3e/laravel-livewire-phone-auth/zipball/eda245123c4e006eaef9b987f9bea46cbe454a6f",
+                "reference": "eda245123c4e006eaef9b987f9bea46cbe454a6f",
                 "shasum": ""
             },
             "require": {
@@ -993,9 +993,10 @@
                 "phone register"
             ],
             "support": {
-                "source": "https://github.com/ert3e/laravel-livewire-phone-auth/tree/0.5.2.7"
+                "issues": "https://github.com/ert3e/laravel-livewire-phone-auth/issues",
+                "source": "https://github.com/ert3e/laravel-livewire-phone-auth/tree/0.1"
             },
-            "time": "2022-03-21T12:03:16+00:00"
+            "time": "2022-04-18T04:58:42+00:00"
         },
         {
             "name": "fideloper/proxy",

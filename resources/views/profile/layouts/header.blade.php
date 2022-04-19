@@ -71,19 +71,30 @@
             </div>
 
             <div class="header-panel">
-                <div id="mobile-search-place">
-                      {{ Form::open(['route' => 'search', 'class' => 'search-info', 'method' => 'GET', 'id' => 'search-info']) }}
-                                <input type="text" class="search-info__input" name="q" autocomplete="off">
-                                <span class="search-info__close">
-                                    <img src="/images/site/close.svg" alt="закрыть">
-                                </span>
-                    {{ Form::close() }}
-                </div>
+                @if (isset($title))
+                    @if ($agent->isMobile())
+                        @if ($title == 'edit_profile')
+                            <div class="header-panel__edit">
+                                <a href="/profile/" class="pencil"></a>
+                            </div>
+                        @else
+                            {{ $title }}
+                        @endif
+                    @endif
+                @else
+                    <div id="mobile-search-place">
+                        {{ Form::open(['route' => 'search', 'class' => 'search-info', 'method' => 'GET', 'id' => 'search-info']) }}
+                        <input type="text" class="search-info__input" name="q" autocomplete="off">
+                        <span class="search-info__close">
+                                        <img src="/images/site/close.svg" alt="закрыть">
+                                    </span>
+                        {{ Form::close() }}
+                    </div>
+                @endif
                 <div class="header-panel__item" id="toggle-menu"><img src="/images/site/3line.svg" alt="toggle"></div>
             </div>
         </div>
     </div>
-
     <div id="mobile-menu" class="global-menu" hidden>
         <div class="container">
             <ul class="global-menu__list">
@@ -127,14 +138,20 @@
 
 @if ((isset($errors) && count($errors) > 0) || session('message_error'))
     <div class="alert alert-success fade show in">
-            @if (session('message_error'))
-                <p>{!! session('message_error') !!}</p>
-            @endif
-            @foreach ($errors->all() as $error)
+        @if (session('message_error'))
+            <p>{!! session('message_error') !!}</p>
+        @endif
+        @foreach ($errors->all() as $error)
                 <p>{{ $error }}</p>
-            @endforeach
-
+        @endforeach
     </div>
 @endif
-
-
+@if ($agent->isMobile())
+    @if (isset($bc) && Route::currentRouteName() != 'main')
+        <div class="container">
+            <div class="breadcrumbs mobile">
+                {!! $bc->render() !!}
+            </div>
+        </div>
+    @endif
+@endif
