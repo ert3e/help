@@ -72,12 +72,12 @@
 
             <div class="header-panel">
                 <div id="mobile-search-place">
-                      {{ Form::open(['route' => 'search', 'class' => 'search-info', 'method' => 'GET', 'id' => 'search-info']) }}
-                                <input type="text" class="search-info__input" name="q" autocomplete="off">
-                                <span class="search-info__close">
-                                    <img src="/images/site/close.svg" alt="закрыть">
-                                </span>
-                            {{ Form::close() }}
+                    {{ Form::open(['route' => 'search', 'class' => 'search-info', 'method' => 'GET', 'id' => 'search-info']) }}
+                        <input type="text" class="search-info__input" name="q" autocomplete="off">
+                            <span class="search-info__close">
+                                <img src="/images/site/close.svg" alt="закрыть">
+                            </span>
+                    {{ Form::close() }}
                 </div>
                 <div class="header-panel__item" id="toggle-menu"><img src="/images/site/3line.svg" alt="toggle"></div>
             </div>

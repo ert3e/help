@@ -15,20 +15,17 @@
         <div class="poor-card__indicators">
             <div class="poor-card-indicator poor-card-indicator__need">
                 <p class="poor-card-indicator__label">Нужно</p>
-                <p class="poor-card-indicator__sum">{{ $picking->formattedPrice() }}</p>
+                <p class="poor-card-indicator__sum">{{ $picking->formattedPrice() }} &#8381;</p>
             </div>
             <div class="poor-card-indicator poor-card-indicator__collected">
                 <p class="poor-card-indicator__label">Собрали</p>
-                
                 @if ($picking->paymentsPaid->sum('amount') == 0 && $picking->category_id == Category::TYPE_HELPED)
-                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->price) }}</p>
+                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->price) }} &#8381;</p>
                 @else
-                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->paymentsPaid->sum('amount')) }}</p>
+                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->paymentsPaid->sum('amount')) }} &#8381;</p>
                 @endif
-                
             </div>
         </div>
-
         <div class="poor-card__panel">
             @if ($picking->paymentsPaid->sum('amount') < $picking->price && $picking->category_id == Category::TYPE_NEEDHELP)
                 <a href="{{ route('want.help', ['picking' => $picking->id]) }}" class="poor-card__to-help">

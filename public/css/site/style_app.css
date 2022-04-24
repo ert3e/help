@@ -146,7 +146,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .tabs__nav {
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +155,6 @@
     border-radius: 30px;
     padding: 5px;
   }
-
   .tabs__btn {
     padding: 0.5rem 0.75rem;
     text-decoration: none;
@@ -168,19 +166,12 @@
     border: none;
     cursor: pointer;
   }
-
   .tabs__btn_active {
     color: #000;
     cursor: default;
     background: #FFFFFF;
     border-radius: 30px;
   }
-
-  .tabs__btn:not(.tabs__btn_active):hover,
-.tabs__btn:not(.tabs__btn_active):focus {
-    background-color: transparent;
-  }
-
   .tabs__content {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -188,13 +179,16 @@
     border-radius: 10px;
     margin-top: 2vh;
   }
-
   .tabs__pane {
     display: none;
   }
-
   .tabs__pane_show {
     display: block;
+  }
+
+  .tabs__btn:not(.tabs__btn_active):hover,
+.tabs__btn:not(.tabs__btn_active):focus {
+    background-color: transparent;
   }
 
   .breadcrumbs {
@@ -211,7 +205,6 @@
     background-color: #fff;
     margin-left: 0;
   }
-
   .app_menu a {
     background-position: top;
     min-height: 50px;
@@ -252,6 +245,25 @@
   .poor-card {
     padding: 15px 0;
   }
+  .poor-card__indicators {
+    margin: 0 0.875rem;
+  }
+  .poor-card__okey {
+    height: 2.625rem;
+    margin: 0 0.875rem;
+  }
+  .poor-card__top .poor-card__info .poor-card__title {
+    padding: 0 0.875rem;
+  }
+
+  .poor-card-indicator__sum {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-top: 0.375rem;
+  }
+  .poor-card-indicator__collected {
+    margin-left: 1rem;
+  }
 
   .articles {
     padding-bottom: 10px;
@@ -270,7 +282,6 @@
   .poor-card {
     max-width: 100%;
   }
-
   .poor-card__info {
     width: 100%;
   }
@@ -312,6 +323,11 @@
   .pauper-person__poor {
     padding-top: 2rem;
     display: none;
+  }
+
+  .pauper-person .requisites {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .pauper-person .page-title {
@@ -501,10 +517,6 @@
     width: 100%;
     z-index: 9999999;
   }
-  .header .cap {
-    border-bottom: none;
-    background: none;
-  }
 
   .green_cart_accaunt {
     background-image: url(../../images/site/green_hand.svg);
@@ -620,8 +632,12 @@
   }
   .header .search-info__input {
     max-width: 55vw;
-    width: 2.2rem;
+    width: 0.2rem;
     height: 2.2rem;
+  }
+  .header .search-info__input {
+    background-position: center left 0.65rem;
+    padding-left: 2.3rem;
   }
 
   .update__form-col {
@@ -667,7 +683,7 @@
   .return {
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 85px;
   }
   .return a:before {
     content: "";

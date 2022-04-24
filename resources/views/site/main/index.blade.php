@@ -199,7 +199,7 @@
 
 @section('footer_js')
     <script>
-        $('.poor-slider').slick({
+/*        $('.poor-slider').slick({
             slidesToShow: 1,
             touchThreshold: 20,
             responsive: [
@@ -213,7 +213,7 @@
                     }
                 },
             ]
-        });
+        });*/
 
         $('.programs-slider').slick({
             slidesToShow: 3,

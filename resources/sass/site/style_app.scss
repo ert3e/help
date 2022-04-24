@@ -142,54 +142,54 @@
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
-  }
 
-  .tabs__nav {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    margin: 0;
-    background: #5A556E;
-    border-radius: 30px;
-    padding: 5px;
-  }
 
-  .tabs__btn {
-    padding: 0.5rem 0.75rem;
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
-    flex-shrink: 0;
-    background-color: transparent;
-    flex-grow: 1;
-    border: none;
-    cursor: pointer;
-  }
+    &__nav {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      margin: 0;
+      background: #5A556E;
+      border-radius: 30px;
+      padding: 5px;
+    }
 
-  .tabs__btn_active {
-    color: #000;
-    cursor: default;
-    background: #FFFFFF;
-    border-radius: 30px;
+    &__btn {
+      padding: 0.5rem 0.75rem;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      flex-shrink: 0;
+      background-color: transparent;
+      flex-grow: 1;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__btn_active {
+      color: #000;
+      cursor: default;
+      background: #FFFFFF;
+      border-radius: 30px;
+    }
+    &__content {
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin-top: 2vh;
+    }
+    &__pane {
+      display: none;
+    }
+    &__pane_show {
+      display: block;
+    }
   }
 
   .tabs__btn:not(.tabs__btn_active):hover,
   .tabs__btn:not(.tabs__btn_active):focus {
     background-color: transparent;
-  }
-  .tabs__content {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 10px;
-    margin-top: 2vh;
-  }
-  .tabs__pane {
-    display: none;
-  }
-
-  .tabs__pane_show {
-    display: block;
   }
 
 
@@ -206,21 +206,21 @@
     padding-bottom: 5px;
     background-color: #fff;
     margin-left: 0;
-  }
-  .app_menu a {
-    background-position: top;
-    min-height: 50px;
-    background-size: contain;
-    padding-top: 40px;
-    padding-bottom: 12px;
-    background-size: 30%;
-    width: 25%;
-    margin-top: 15px;
-    font-size: 12px;
-    background-repeat: no-repeat;
-    text-align: center;
-    filter: grayscale(1);
-    color: #0a8e60;
+    a {
+      background-position: top;
+      min-height: 50px;
+      background-size: contain;
+      padding-top: 40px;
+      padding-bottom: 12px;
+      background-size: 30%;
+      width: 25%;
+      margin-top: 15px;
+      font-size: 12px;
+      background-repeat: no-repeat;
+      text-align: center;
+      filter: grayscale(1);
+      color: #0a8e60;
+    }
   }
   .sbor {
     background: url(../../images/site/sbor.svg);
@@ -241,6 +241,32 @@
   }
   .poor-card {
     padding: 15px 0;
+    &__indicators {
+      margin: 0 0.875rem;
+    }
+    &__okey {
+      height: 2.625rem;
+      margin: 0 0.875rem;
+    }
+    &__top {
+      .poor-card__info {
+        .poor-card__title {
+          padding:0 0.875rem;
+        }
+      }
+    }
+
+  }
+
+  .poor-card-indicator {
+    &__sum {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-top: 0.375rem;
+    }
+    &__collected {
+      margin-left: 1rem;
+    }
   }
 
   .articles {
@@ -248,7 +274,6 @@
     margin-top: 75px;
   }
   .want-help .donate-form {
-
     background: #fff;
   }
   .no_filter {
@@ -256,9 +281,9 @@
   }
   .poor-card {
     max-width: 100%;
-  }
-  .poor-card__info {
-    width: 100%;
+    &__info {
+      width: 100%;
+    }
   }
   .news_m .container, .article-pg .container, .pauper-person .container, .want-help__container {
     background-color: #fff;
@@ -290,6 +315,10 @@
   .pauper-person__poor {
     padding-top: 2rem;
     display: none;
+  }
+  .pauper-person .requisites {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .pauper-person .page-title {
     margin-bottom: 1.5rem;
@@ -469,10 +498,6 @@
     width: 100%;
     z-index: 9999999;
 
-    .cap {
-      border-bottom: none;
-      background: none;
-    }
   }
   .green_cart_accaunt {
     background-image: url(../../images/site/green_hand.svg);
@@ -576,10 +601,17 @@
       border-radius: 50%;
     }
 
-    .search-info__input {
-      max-width: 55vw;
-      width: 2.2rem;
-      height: 2.2rem;
+    .search-info {
+        &__input {
+        max-width: 55vw;
+        width: 0.2rem;
+        height: 2.2rem;
+      }
+      &__input {
+        background-position: center left 0.65rem;
+        padding-left: 2.3rem;
+      }
+
     }
   }
   .update {
@@ -633,7 +665,7 @@
   .return {
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 85px;
       a:before {
         content: "";
         background-image: url(../../images/site/arroww.svg);
