@@ -12,30 +12,25 @@
                     <div class="tabs__pane tabs__pane_show">
                         @if (count($pickings) > 0 && $category = Category::find(Category::TYPE_NEEDHELP))
                             <section class="poor">
-                                <div class="container">
-                                    <div class="poor-slider">
-                                        @foreach($pickings as $picking)
-                                            <div class="poor-slider__slide">
-                                                @include('catalog._picking')
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                <div class="poor-slider">
+                                    @foreach($pickings as $picking)
+                                        <div class="poor-slider__slide">
+                                            @include('catalog._picking')
+                                        </div>
+                                    @endforeach
                                 </div>
                             </section>
                         @endif
                     </div>
                     <div class="tabs__pane">
                         @if (count($pickingsCompleted) && $category = Category::find(Category::TYPE_HELPED))
-
                             <section class="poor">
-                                <div class="container">
-                                    <div class="poor-slider">
-                                        @foreach($pickingsCompleted as $picking)
-                                            <div class="poor-slider__slide">
-                                                @include('catalog._picking')
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                <div class="poor-slider">
+                                    @foreach($pickingsCompleted as $picking)
+                                        <div class="poor-slider__slide">
+                                            @include('catalog._picking')
+                                        </div>
+                                    @endforeach
                                 </div>
                             </section>
                         @endif

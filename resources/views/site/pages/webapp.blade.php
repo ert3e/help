@@ -43,18 +43,18 @@
             <div class="tabs__pane">
               @if (count($pickingsCompleted) && $category = Category::find(Category::TYPE_HELPED))
     
-        <section class="poor">
-            <div class="container">
-                <div class="poor-slider">
-                    @foreach($pickingsCompleted as $picking)
-                        <div class="poor-slider__slide">
-                            @include('catalog._picking')
+                <section class="poor">
+                    <div class="container">
+                        <div class="poor-slider">
+                            @foreach($pickingsCompleted as $picking)
+                                <div class="poor-slider__slide">
+                                    @include('catalog._picking')
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        @endif
+                    </div>
+                </section>
+                 @endif
       </div>
     </div>
 

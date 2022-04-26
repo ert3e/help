@@ -25,6 +25,8 @@
                     <p class="poor-card-indicator__sum">{{ formattedPrice($picking->paymentsPaid->sum('amount')) }} &#8381;</p>
                 @endif
             </div>
+            <div class="poor-card-indicator"></div>
+            <div class="poor-card-indicator"></div>
         </div>
         <div class="poor-card__panel">
             @if ($picking->paymentsPaid->sum('amount') < $picking->price && $picking->category_id == Category::TYPE_NEEDHELP)

@@ -173,10 +173,6 @@
       border-radius: 30px;
     }
     &__content {
-      background: #FFFFFF;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      border-radius: 10px;
       margin-top: 2vh;
     }
     &__pane {
@@ -239,23 +235,14 @@
   #toggle-menu {
     display: none;
   }
-  .poor-card {
-    padding: 15px 0;
-    &__indicators {
-      margin: 0 0.875rem;
+  .poor-slider {
+    &__slide {
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
-    &__okey {
-      height: 2.625rem;
-      margin: 0 0.875rem;
-    }
-    &__top {
-      .poor-card__info {
-        .poor-card__title {
-          padding:0 0.875rem;
-        }
-      }
-    }
-
   }
 
   .poor-card-indicator {
@@ -263,9 +250,13 @@
       font-size: 0.875rem;
       font-weight: 700;
       margin-top: 0.375rem;
+      color: #5A556E;
     }
     &__collected {
       margin-left: 1rem;
+    }
+    &__label {
+      font-size: 0.875rem;
     }
   }
 
@@ -279,12 +270,7 @@
   .no_filter {
     filter: none !important;
   }
-  .poor-card {
-    max-width: 100%;
-    &__info {
-      width: 100%;
-    }
-  }
+
   .news_m .container, .article-pg .container, .pauper-person .container, .want-help__container {
     background-color: #fff;
     padding: 15px;
@@ -333,7 +319,6 @@
   }
   #zaglush_uved, #zaglush_prof {
     display: none;
-
     position: absolute;
     z-index: 1111;
     top: 50%;
@@ -588,10 +573,43 @@
   .loaded .preloader {
     display: none !important;
   }
+
   .poor-card {
-    padding: 15px 0 !important;
+    &__to-help {
+      span {
+        font-size: 1.175rem;
+        font-weight: 400;
+      }
+    }
+    padding: 10px;
     width: 100%;
+    max-width: 100%;
+    &__indicators {
+      margin: 0 0.875rem;
+    }
+    &__okey {
+      height: 2.625rem;
+      margin: 0 0.875rem;
+    }
+    &__top {
+      padding: 6px 6px 0 6px;
+      .poor-card__info {
+        .poor-card__title {
+          padding:0 0.875rem;
+        }
+      }
+    }
+    &__line {
+      margin: 1.25rem -10px;
+    }
+    &__bottom {
+      padding: 0px 6px 0 6px;
+    }
+    &__info {
+      width: 100%;
+    }
   }
+
   .header {
     .search-info {
       right: -10px;
