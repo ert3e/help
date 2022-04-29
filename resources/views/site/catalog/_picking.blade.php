@@ -15,18 +15,23 @@
         <div class="poor-card__indicators">
             <div class="poor-card-indicator poor-card-indicator__need">
                 <p class="poor-card-indicator__label">Нужно</p>
-                <p class="poor-card-indicator__sum">{{ $picking->formattedPrice() }} &#8381;</p>
+                <p class="poor-card-indicator__sum">{{ $picking->formattedPrice() }} </p>
             </div>
             <div class="poor-card-indicator poor-card-indicator__collected">
                 <p class="poor-card-indicator__label">Собрали</p>
                 @if ($picking->paymentsPaid->sum('amount') == 0 && $picking->category_id == Category::TYPE_HELPED)
-                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->price) }} &#8381;</p>
+                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->price) }}</p>
                 @else
-                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->paymentsPaid->sum('amount')) }} &#8381;</p>
+                    <p class="poor-card-indicator__sum">{{ formattedPrice($picking->paymentsPaid->sum('amount')) }}</p>
                 @endif
             </div>
-            <div class="poor-card-indicator"></div>
-            <div class="poor-card-indicator"></div>
+            @if ($picking->paymentsPaid->sum('amount') == 0 && $picking->category_id == Category::TYPE_HELPED)
+                <div class="poor-card-indicator"></div>
+            @else
+                @if ($agent->isMobile())
+                    <a href="#" class="poor-card-indicator__refer">Расскажите о сборе</a>
+                @endif
+            @endif
         </div>
         <div class="poor-card__panel">
             @if ($picking->paymentsPaid->sum('amount') < $picking->price && $picking->category_id == Category::TYPE_NEEDHELP)

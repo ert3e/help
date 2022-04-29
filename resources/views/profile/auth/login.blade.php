@@ -2,6 +2,14 @@
 
 @section('content')
     <div class="login">
+        @if ($agent->isMobile())
+            <div class="container">
+                <div class="return">
+                    <a href="/donation/" class="arrow"></a>
+                    <span> Вернутся назад</span>
+                </div>
+            </div>
+        @endif
         <div class="container">
             <div class="login__container">
                 <div class="login-form__part">

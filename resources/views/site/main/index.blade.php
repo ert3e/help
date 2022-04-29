@@ -193,23 +193,26 @@
 @endsection
 
 @section('footer_js')
-    <script>
-/*        $('.poor-slider').slick({
-            slidesToShow: 1,
-            touchThreshold: 20,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        variableWidth: true,
-                        infinite: true,
-                        arrows: false,
-                    }
-                },
-            ]
-        });*/
-
+    @if (!$agent->isMobile())
+        <script>
+            $('.poor-slider').slick({
+                slidesToShow: 1,
+                touchThreshold: 20,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            variableWidth: true,
+                            infinite: true,
+                            arrows: false,
+                        }
+                    },
+                ]
+            });
+        </script>
+    @endif
+        <script>
         $('.programs-slider').slick({
             slidesToShow: 3,
             touchThreshold: 20,

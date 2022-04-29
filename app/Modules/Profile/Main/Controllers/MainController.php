@@ -7,7 +7,7 @@ use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use App\Models\RelationModels\Image;
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\View;
 
 class MainController extends ProfileController
@@ -24,7 +24,11 @@ class MainController extends ProfileController
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time() . '.' .$avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/avatars/'. $filename));
+
+            Image::make( file_get_contents($avatar))->resize(300, 300)
+                ->save(
+                    public_path('uploads/avatars/'. $filename)
+                );
 
             $user = Auth::user();
             $user->avatar = $filename;

@@ -34,6 +34,10 @@
     display: none;
   }
 
+  .home .preview__to-help:hover {
+    background: #08724D;
+  }
+
   .webapp.search-info {
     display: inline-block;
     position: absolute;
@@ -234,6 +238,10 @@
     background: url(../../images/site/user.svg);
   }
 
+  .login .login-form__row {
+    margin-top: 1.75rem;
+  }
+
   #toggle-menu {
     display: none;
   }
@@ -249,14 +257,25 @@
   .poor-card-indicator__sum {
     font-size: 0.875rem;
     font-weight: 700;
-    margin-top: 0.375rem;
+    margin-top: 0.75rem;
     color: #5A556E;
   }
   .poor-card-indicator__collected {
     margin-left: 1rem;
   }
   .poor-card-indicator__label {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .poor-card-indicator__refer {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 10px;
+    width: 5rem;
   }
 
   .articles {
@@ -447,13 +466,6 @@
     margin-bottom: 30px;
   }
 
-  .login .login-form-phone {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 5px;
-  }
-
   .summa_cart .wash:before {
     content: "";
     background-image: url(../../images/site/green_heart.svg);
@@ -497,12 +509,6 @@
     text-align: center;
     color: #000000;
     padding: 15px 0 20px;
-  }
-
-  .header {
-    position: fixed;
-    width: 100%;
-    z-index: 9999999;
   }
 
   .green_cart_accaunt {
@@ -624,11 +630,15 @@
   .poor-card__top {
     padding: 6px 6px 0 6px;
   }
-  .poor-card__top .poor-card__info .poor-card__title {
+  .poor-card__top .poor-card__info {
+    padding: 0 0.875rem;
+  }
+  .poor-card__top .poor-card__title {
     padding: 0 0.875rem;
   }
   .poor-card__line {
     margin: 1.25rem -10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
   }
   .poor-card__bottom {
     padding: 0px 6px 0 6px;
@@ -637,6 +647,29 @@
     width: 100%;
   }
 
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+  }
+  .header__to-logout {
+    padding: 0 0.5rem;
+    height: 2.225rem;
+    width: 9.1875rem;
+    font-size: 1rem;
+    color: #000000;
+    background: #F4D4AA;
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+  .header__to-logout span {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  .header__to-login:hover {
+    background: #08724D;
+  }
   .header .search-info {
     right: -10px;
     background: #FFFFFF;
@@ -747,15 +780,24 @@
     border-radius: 10px;
   }
 
+  .login-form__part {
+    width: 100%;
+  }
+
   .login__container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
   .login .login-form-phone {
-    width: 21.75rem;
-    height: 2.125rem;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0.5625rem 0.875rem;
     font-size: 0.95rem;
+    height: 2.725rem;
   }
   .login .login-form-phone::-moz-placeholder {
     font-family: "Roboto";
